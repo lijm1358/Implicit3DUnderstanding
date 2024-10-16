@@ -20,10 +20,10 @@ def get_cuda_version():
   try:
     output = sp.check_output(['nvcc', '-V']).decode('utf-8')
     lines = output.split('\n')
-    if output.find('V11') < 0:
-      version_str = lines[-2].split(',')[1].split(' ')[-1]
-    else:
-      version_str = lines[-3].split(',')[1].split(' ')[-1]
+    # if output.find('V11') < 0:
+    #   version_str = lines[-2].split(',')[1].split(' ')[-1]
+    # else:
+    version_str = lines[-3].split(',')[1].split(' ')[-1]
       
     major_version = int(version_str.split('.')[0])
     minor_version = int(version_str.split('.')[1])
